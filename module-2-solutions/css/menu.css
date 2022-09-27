@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 767px;
+}
+
+.container {
+    margin-left: 1rem;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+h2 {
+    border: 1px solid black;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.grid-1 {
+    border: 1px solid black;
+    background-color: grey;
+    position: relative;
+}
+
+p {
+    padding-top: 2rem;
+    width: 100%;
+}
+
+.chicken {
+    background-color: rgb(243, 201, 243);
+    width: 120px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+}
+
+.beef {
+    background-color: rgb(240, 240, 127);
+    position: absolute;
+    width: 120px;
+    top: 0;
+    right: 0;
+    text-align: center;
+}
+
+.sushi {
+    background-color: rgb(223, 61, 61);
+    position: absolute;
+    width: 120px;
+    top: 0;
+    right: 0;
+    text-align: center;
+    grid-column: span 2;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 'one' 'two' 'three';
+}
+
+.grid-1:nth-child(1) {
+    grid-area: one;
+}
+
+.grid-1:nth-child(2) {
+    grid-area: two;
+}
+
+.grid-1:nth-child(3) {
+    grid-area: three;
+}
+
+@media(min-width:768px)and (max-width:991px) {
+    .grid {
+        grid-template-areas: 'one two' 'three three'
+    }
+}
+
+@media(min-width:992px) {
+    .grid {
+        grid-template-areas: 'one two three'
+    }
+}
